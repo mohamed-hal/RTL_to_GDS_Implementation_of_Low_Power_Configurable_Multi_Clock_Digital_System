@@ -1,0 +1,47 @@
+ 
+****************************************
+Report : area
+Design : UART_TX
+Version: O-2018.06-SP1
+Date   : Thu Aug 13 04:53:26 2026
+****************************************
+
+Library(s) Used:
+
+    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c (File: /home/ICer/Assignments/ASS2/SYN/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db)
+
+Number of ports:                           59
+Number of nets:                           152
+Number of cells:                           96
+Number of combinational cells:             68
+Number of sequential cells:                24
+Number of macros/black boxes:               0
+Number of buf/inv:                         15
+Number of references:                       4
+
+Combinational area:                564.816006
+Buf/Inv area:                       82.369001
+Noncombinational area:             634.241295
+Macro/Black Box area:                0.000000
+Net Interconnect area:           35280.178406
+
+Total cell area:                  1199.057301
+Total area:                      36479.235707
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  -----------
+UART_TX                           1199.0573    100.0    0.0000     0.0000  0.0000  UART_TX
+u_fsm                              205.9225     17.2   95.3127   110.6098  0.0000  FSM
+u_mux                               30.5942      2.6   30.5942     0.0000  0.0000  MUX
+u_parity                           450.6761     37.6  217.6895   232.9866  0.0000  Parity_Calc
+u_serializer                       511.8645     42.7  221.2196   290.6449  0.0000  Serializer
+--------------------------------  ---------  -------  --------  ---------  ------  -----------
+Total                                                 564.8160   634.2413  0.0000
+
+1

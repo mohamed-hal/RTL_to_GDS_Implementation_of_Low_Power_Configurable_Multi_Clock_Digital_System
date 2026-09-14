@@ -1,0 +1,189 @@
+ 
+****************************************
+Report : port
+        -verbose
+Design : UART_TX
+Version: O-2018.06-SP1
+Date   : Tue Sep  8 03:48:33 2026
+****************************************
+
+
+
+Attributes:
+    d - dont_touch_network
+
+                       Pin      Wire     Max     Max     Connection
+Port           Dir     Load     Load     Trans   Cap     Class      Attrs
+--------------------------------------------------------------------------------
+Data_Valid     in      0.0000   0.0000    1.50    0.18   --         
+PAR_EN         in      0.0000   0.0000    1.50    0.18   --         
+PAR_TYP        in      0.0000   0.0000    1.50    0.18   --         
+P_DATA[0]      in      0.0000   0.0000    1.50    0.18   --         
+P_DATA[1]      in      0.0000   0.0000    1.50    0.18   --         
+P_DATA[2]      in      0.0000   0.0000    1.50    0.18   --         
+P_DATA[3]      in      0.0000   0.0000    1.50    0.18   --         
+P_DATA[4]      in      0.0000   0.0000    1.50    0.18   --         
+P_DATA[5]      in      0.0000   0.0000    1.50    0.18   --         
+P_DATA[6]      in      0.0000   0.0000    1.50    0.18   --         
+P_DATA[7]      in      0.0000   0.0000    1.50    0.18   --         
+RST            in      0.0000   0.0000    1.50    0.18   --         d
+SE             in      0.0000   0.0000   --      --      --         
+SI             in      0.0000   0.0000   --      --      --         
+clk            in      0.0000   0.0000    1.50    0.18   --         d
+scan_clk       in      0.0000   0.0000   --      --      --         
+scan_rst       in      0.0000   0.0000   --      --      --         
+test_mode      in      0.0000   0.0000   --      --      --         
+Busy           out     0.1000   0.0000   --      --      --         
+SO             out     0.1000   0.0000   --      --      --         
+TX_OUT         out     0.1000   0.0000   --      --      --         
+
+
+              External  Max             Min                Min       Min
+              Number    Wireload        Wireload           Pin       Wire
+Port          Points    Model           Model              Load      Load
+--------------------------------------------------------------------------------
+Data_Valid         1      --              --              --        -- 
+PAR_EN             1      --              --              --        -- 
+PAR_TYP            1      --              --              --        -- 
+P_DATA[0]          1      --              --              --        -- 
+P_DATA[1]          1      --              --              --        -- 
+P_DATA[2]          1      --              --              --        -- 
+P_DATA[3]          1      --              --              --        -- 
+P_DATA[4]          1      --              --              --        -- 
+P_DATA[5]          1      --              --              --        -- 
+P_DATA[6]          1      --              --              --        -- 
+P_DATA[7]          1      --              --              --        -- 
+RST                1      --              --              --        -- 
+SE                 1      --              --              --        -- 
+SI                 1      --              --              --        -- 
+clk                1      --              --              --        -- 
+scan_clk           1      --              --              --        -- 
+scan_rst           1      --              --              --        -- 
+test_mode          1      --              --              --        -- 
+Busy               1      --              --              --        -- 
+SO                 1      --              --              --        -- 
+TX_OUT             1      --              --              --        -- 
+
+                    Input Delay
+                  Min             Max       Related   Max
+Input Port    Rise    Fall    Rise    Fall   Clock  Fanout
+--------------------------------------------------------------------------------
+Data_Valid  300.00  300.00  300.00  300.00  clk       --    
+PAR_EN      300.00  300.00  300.00  300.00  clk       --    
+PAR_TYP     300.00  300.00  300.00  300.00  clk       --    
+P_DATA[0]   300.00  300.00  300.00  300.00  clk       --    
+P_DATA[1]   300.00  300.00  300.00  300.00  clk       --    
+P_DATA[2]   300.00  300.00  300.00  300.00  clk       --    
+P_DATA[3]   300.00  300.00  300.00  300.00  clk       --    
+P_DATA[4]   300.00  300.00  300.00  300.00  clk       --    
+P_DATA[5]   300.00  300.00  300.00  300.00  clk       --    
+P_DATA[6]   300.00  300.00  300.00  300.00  clk       --    
+P_DATA[7]   300.00  300.00  300.00  300.00  clk       --    
+RST           --      --      --      --      --      -- 
+SE          300.00  300.00  300.00  300.00  clk       --    
+SI          300.00  300.00  300.00  300.00  clk       --    
+clk           --      --      --      --      --      -- 
+scan_clk    300.00  300.00  300.00  300.00  clk       --    
+scan_rst    300.00  300.00  300.00  300.00  clk       --    
+test_mode   300.00  300.00  300.00  300.00  clk       --    
+
+
+                    Driving Cell
+Input Port   Rise(min/max)      Fall(min/max)      Mult(min/max)  Attrs(min/max)
+--------------------------------------------------------------------------------
+Data_Valid   scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                                     -- /  --     
+PAR_EN       scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                                     -- /  --     
+PAR_TYP      scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                                     -- /  --     
+P_DATA[0]    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                                     -- /  --     
+P_DATA[1]    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                                     -- /  --     
+P_DATA[2]    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                                     -- /  --     
+P_DATA[3]    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                                     -- /  --     
+P_DATA[4]    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                                     -- /  --     
+P_DATA[5]    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                                     -- /  --     
+P_DATA[6]    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                                     -- /  --     
+P_DATA[7]    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                                     -- /  --     
+RST          scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                                     -- /  --     
+clk          scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                scmetro_tsmc_cl013g_rvt_ss_1p08v_125c/BUFX2M
+                                                     -- /  --     
+
+
+               Max Drive      Min Drive      Resistance    Min    Min       Cell
+Input Port    Rise    Fall   Rise    Fall   Max     Min    Cap    Fanout    Deg
+--------------------------------------------------------------------------------
+Data_Valid    --      --     --      --     --      --     --     --        -- 
+PAR_EN        --      --     --      --     --      --     --     --        -- 
+PAR_TYP       --      --     --      --     --      --     --     --        -- 
+P_DATA[0]     --      --     --      --     --      --     --     --        -- 
+P_DATA[1]     --      --     --      --     --      --     --     --        -- 
+P_DATA[2]     --      --     --      --     --      --     --     --        -- 
+P_DATA[3]     --      --     --      --     --      --     --     --        -- 
+P_DATA[4]     --      --     --      --     --      --     --     --        -- 
+P_DATA[5]     --      --     --      --     --      --     --     --        -- 
+P_DATA[6]     --      --     --      --     --      --     --     --        -- 
+P_DATA[7]     --      --     --      --     --      --     --     --        -- 
+RST           --      --     --      --     --      --     --     --        -- 
+SE            --      --     --      --     --      --     --     --        -- 
+SI            --      --     --      --     --      --     --     --        -- 
+clk           --      --     --      --     --      --     --     --        -- 
+scan_clk      --      --     --      --     --      --     --     --        -- 
+scan_rst      --      --     --      --     --      --     --     --        -- 
+test_mode     --      --     --      --     --      --     --     --        -- 
+
+
+               Max Tran        Min Tran
+Input Port    Rise    Fall    Rise    Fall
+--------------------------------------------------------------------------------
+Data_Valid    --      --      --      -- 
+PAR_EN        --      --      --      -- 
+PAR_TYP       --      --      --      -- 
+P_DATA[0]     --      --      --      -- 
+P_DATA[1]     --      --      --      -- 
+P_DATA[2]     --      --      --      -- 
+P_DATA[3]     --      --      --      -- 
+P_DATA[4]     --      --      --      -- 
+P_DATA[5]     --      --      --      -- 
+P_DATA[6]     --      --      --      -- 
+P_DATA[7]     --      --      --      -- 
+RST           --      --      --      -- 
+SE            --      --      --      -- 
+SI            --      --      --      -- 
+clk           --      --      --      -- 
+scan_clk      --      --      --      -- 
+scan_rst      --      --      --      -- 
+test_mode     --      --      --      -- 
+
+
+                    Output Delay
+                  Min             Max      Related  Fanout
+Output Port   Rise    Fall    Rise    Fall  Clock     Load
+--------------------------------------------------------------------------------
+Busy        300.00  300.00  300.00  300.00  clk       0.00  
+SO          300.00  300.00  300.00  300.00  clk       0.00  
+TX_OUT      300.00  300.00  300.00  300.00  clk       0.00  
+
+1

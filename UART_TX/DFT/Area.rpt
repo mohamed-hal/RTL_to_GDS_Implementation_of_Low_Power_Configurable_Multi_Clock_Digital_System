@@ -1,0 +1,50 @@
+ 
+****************************************
+Report : area
+Design : UART_TX
+Version: O-2018.06-SP1
+Date   : Tue Sep  8 03:48:32 2026
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c (File: /home/ICer/Assignments/ASS2/SYN/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db)
+
+Number of ports:                           82
+Number of nets:                           175
+Number of cells:                          100
+Number of combinational cells:             70
+Number of sequential cells:                24
+Number of macros/black boxes:               0
+Number of buf/inv:                         15
+Number of references:                       8
+
+Combinational area:                536.575207
+Buf/Inv area:                       61.188402
+Noncombinational area:             793.095825
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                  1329.671032
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ------------------
+UART_TX                           1329.6710    100.0   18.8272     0.0000  0.0000  UART_TX
+U00_mux2X1                          11.7670      0.9   11.7670     0.0000  0.0000  mux2X1_0
+U01_scan_rstmux2X1                  11.7670      0.9   11.7670     0.0000  0.0000  mux2X1_1
+u_fsm                              208.2759     15.7   75.3088   132.9671  0.0000  FSM_test_1
+u_mux                               25.8874      1.9   25.8874     0.0000  0.0000  MUX
+u_parity                           502.4509     37.8  205.9225   296.5284  0.0000  Parity_Calc_test_1
+u_serializer                       550.6956     41.4  187.0953   363.6003  0.0000  Serializer_test_1
+--------------------------------  ---------  -------  --------  ---------  ------  ------------------
+Total                                                 536.5752   793.0958  0.0000
+
+1
