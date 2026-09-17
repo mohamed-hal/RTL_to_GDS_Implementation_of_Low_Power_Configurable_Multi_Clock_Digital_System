@@ -1,34 +1,61 @@
-module serializer(
-       input clk , RST,
-       input [7:0] P_DATA,
-       input ser_en,
-       output ser_done,
-       output reg ser_data
-    );
-reg [7:0] shift_reg;
-reg [7:0] counter;
 
-always @(posedge clk, negedge RST) begin
-    if (!RST) begin
-        shift_reg <= 8'b0;
-        counter   <= 0;
-        ser_data  <= 1'b0;
-    end
-    else if (ser_en && counter == 0) begin
-        shift_reg <= P_DATA;        
-        ser_data  <= P_DATA[0];     
-        counter   <= counter + 1;
-    end
-    else if (ser_en && counter != 8) begin
-        shift_reg <= shift_reg >> 1;   
-        ser_data  <= shift_reg[1];    
-        counter   <= counter + 1;
-    end
-    else begin
-        counter <= 0;
-    end
-end
+module Serializer # ( parameter WIDTH = 8 )
 
-assign ser_done = (counter == 8);
+(
+ input   wire                  CLK,
+ input   wire                  RST,
+ input   wire   [WIDTH-1:0]    DATA,
+ input   wire                  Enable, 
+ input   wire                  Busy,
+ input   wire                  Data_Valid, 
+ output  wire                  ser_out,
+ output  wire                  ser_done
+);
+
+reg  [WIDTH-1:0]    DATA_V ;
+reg  [2:0]          ser_count ;
+              
+//isolate input 
+always @ (posedge CLK or negedge RST)
+ begin
+  if(!RST)
+   begin
+    DATA_V <= 'b0 ;
+   end
+  else if(Data_Valid && !Busy)
+   begin
+    DATA_V <= DATA ;
+   end	
+  else if(Enable)
+   begin
+    DATA_V <= DATA_V >> 1 ;         // shift register
+   end
+ end
+ 
+
+//counter
+always @ (posedge CLK or negedge RST)
+ begin
+  if(!RST)
+   begin
+    ser_count <= 'b0 ;
+   end
+  else
+   begin
+    if (Enable)
+	 begin
+      ser_count <= ser_count + 'b1 ;		 
+	 end
+	else 
+	 begin
+      ser_count <= 'b0 ;		 
+	 end	
+   end
+ end 
+
+assign ser_done = (ser_count == 'b111) ? 1'b1 : 1'b0 ;
+
+assign ser_out = DATA_V[0] ;
 
 endmodule
+ 

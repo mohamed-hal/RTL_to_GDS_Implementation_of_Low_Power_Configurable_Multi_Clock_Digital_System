@@ -80,23 +80,18 @@ end
 always @(*)
  begin
        mux_sel = sel_stop;
-       ser_en  = 0;
-       busy_c  = 1;
+       ser_en  = 'b0;
+       busy_c  = 'b1;
        case (Current_State)
        IDLE      :   begin
-                         busy_c  = 0;
+                         busy_c  = 'b0;
        end
        start_bit :   begin
                          mux_sel = sel_start;
-                         // ser_en removed here: the new Serializer's ser_out
-                         // is combinational (DATA_V[0]), not registered, so
-                         // no early pre-load is needed. Asserting Enable
-                         // here would cause an extra shift before ser_data
-                         // even starts, silently dropping bit0.
        end
        ser_data  :   begin
                          mux_sel = sel_data;
-                         ser_en  = 1;
+                         ser_en  = 'b1;
        end
        par_bit   :   begin
                          mux_sel = sel_par;
@@ -106,8 +101,8 @@ always @(*)
        end
        default:      begin
                          mux_sel = sel_stop;
-                         busy_c  = 0;
-                         ser_en  = 0;
+                         busy_c  = 'b0;
+                         ser_en  = 'b0;
        end
        endcase
 end
