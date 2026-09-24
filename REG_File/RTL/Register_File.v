@@ -11,10 +11,10 @@ module Register_File #(
     input   wire                          RST ,
     output  reg   [DATA_WIDTH - 1 : 0]    RdData,
     output  reg                           RdData_Valid,
-    output  reg   [DATA_WIDTH - 1 : 0]    REG0,
-    output  reg   [DATA_WIDTH - 1 : 0]    REG1,
-    output  reg   [DATA_WIDTH - 1 : 0]    REG2,
-    output  reg   [DATA_WIDTH - 1 : 0]    REG3
+    output  wire  [DATA_WIDTH - 1 : 0]    REG0,
+    output  wire  [DATA_WIDTH - 1 : 0]    REG1,
+    output  wire  [DATA_WIDTH - 1 : 0]    REG2,
+    output  wire  [DATA_WIDTH - 1 : 0]    REG3
     );
     
     reg [DATA_WIDTH - 1 : 0] regfile [0 : DEPTH - 1];
