@@ -5,13 +5,14 @@ module UART_TX # ( parameter WIDTH = 8 )(
        input PAR_TYP,
        input clk, RST,
 
+       /* DFT SIGNALS
        input  wire                        SI,
        input  wire                        SE,
        input  wire                        test_mode,
        input  wire                        scan_clk,
        input  wire                        scan_rst,
        output wire                        SO,
-
+       */
        output TX_OUT,
        output Busy
     );
@@ -29,16 +30,20 @@ module UART_TX # ( parameter WIDTH = 8 )(
         .Data_Valid (Data_Valid),
         .PAR_EN     (PAR_EN),
         .ser_done   (ser_done),
-        .RST        (RST_M),
-        .clk        (CLK_M),
+        //.RST        (RST_M),
+        .RST        (RST),
+        //.clk        (CLK_M),
+        .clk        (clk),
         .busy       (Busy),
         .ser_en     (ser_en),
         .mux_sel    (mux_sel)
     );
 
     Serializer # (.WIDTH(WIDTH)) u_serializer (
-        .CLK        (CLK_M),
-        .RST        (RST_M),
+        //.RST        (RST_M),
+        .RST        (RST),
+        //.clk        (CLK_M),
+        .clk        (clk),
         .DATA       (P_DATA),
         .Enable     (ser_en),
         .Busy       (Busy),
@@ -48,8 +53,10 @@ module UART_TX # ( parameter WIDTH = 8 )(
     );
 
     Parity_Calc # (.WIDTH(WIDTH)) u_parity (
-        .clk        (CLK_M),
-        .RST        (RST_M),
+        //.RST        (RST_M),
+        .RST        (RST),
+        //.clk        (CLK_M),
+        .clk        (clk),
         .P_DATA     (P_DATA),
         .Data_Valid (Data_Valid),
         .PAR_TYP    (PAR_TYP),
@@ -65,6 +72,7 @@ module UART_TX # ( parameter WIDTH = 8 )(
         .TX_OUT  (TX_OUT)
     );
 
+/*
 mux2X1 U00_mux2X1 (
 .IN_0(clk),
 .IN_1(scan_clk),
@@ -79,5 +87,5 @@ mux2X1 U01_scan_rstmux2X1 (
 .SEL(test_mode),
 .OUT(RST_M)
 );
-
+*/
 endmodule
