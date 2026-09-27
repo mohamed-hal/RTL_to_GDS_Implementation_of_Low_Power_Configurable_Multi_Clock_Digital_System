@@ -43,7 +43,7 @@ module UART_TX # ( parameter WIDTH = 8 )(
         //.RST        (RST_M),
         .RST        (RST),
         //.clk        (CLK_M),
-        .clk        (clk),
+        .CLK        (clk),
         .DATA       (P_DATA),
         .Enable     (ser_en),
         .Busy       (Busy),

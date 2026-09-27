@@ -1,7 +1,7 @@
 module Register_File #(
-    parameter ADDRESS_WIDTH = 4 ,
+    parameter DEPTH         = 16 ,
               DATA_WIDTH    = 8 ,
-              DEPTH         = 16
+              ADDRESS_WIDTH = $clog2 (DEPTH)
 )(
     input   wire  [DATA_WIDTH - 1 : 0]    WrData ,
     input   wire  [ADDRESS_WIDTH - 1 : 0] Address ,

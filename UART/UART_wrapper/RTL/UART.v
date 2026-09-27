@@ -16,7 +16,7 @@ module UART #(parameter DATA_WIDTH = 8) (
     ///////////////////////////////////////////////////////
     //////////////////     RX_INTERFACE    ////////////////
     ///////////////////////////////////////////////////////
-    input   wire  [DATA_WIDTH - 1 : 0]  RX_IN,
+    input   wire                        RX_IN,
     output  wire  [DATA_WIDTH - 1 : 0]  RX_P_DATA,
     output  wire                        RX_Data_Valid,
     output  wire                        Parity_Error,

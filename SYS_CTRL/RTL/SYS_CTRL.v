@@ -102,7 +102,7 @@ always @(*) begin
     IDLE   : begin
         if (RX_D_VLD) begin
             if (RX_P_DATA == RF_Wr_CMD) begin
-                Next_State = RF_Rd_Addr;
+                Next_State = RF_Wr_Addr;
             end
             else if (RX_P_DATA == RF_Rd_CMD) begin
                 Next_State = RF_Rd_Addr;
@@ -111,7 +111,7 @@ always @(*) begin
                 Next_State = OPERAND_A;
             end
             else if (RX_P_DATA == ALU_OPER_W_NOP_CMD) begin
-                Next_State = ALU_FUN;
+                Next_State = ALU_FUN_ST;
             end
             else begin
                 Next_State = IDLE;
@@ -169,7 +169,7 @@ always @(*) begin
 
     OPERAND_B   : begin
         if (RX_D_VLD) begin
-            Next_State = ALU_FUN;
+            Next_State = ALU_FUN_ST;
         end
         else begin
             Next_State = OPERAND_B;
