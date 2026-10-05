@@ -1,0 +1,124 @@
+Loading db file '/home/ICer/Assignments/FINAL_SYSTEM/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : SYS_TOP
+Version: O-2018.06-SP1
+Date   : Mon Oct  5 18:35:48 2026
+****************************************
+
+
+Library(s) Used:
+
+    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c (File: /home/ICer/Assignments/FINAL_SYSTEM/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db)
+
+
+Operating Conditions: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c   Library: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+SYS_TOP                tsmc13_wl30       scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+
+Global Operating Voltage = 1.08 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+SYS_TOP                                   0.788    0.267 2.97e+07    1.085 100.0
+  RST_SYNC2_SCAN (mux2X1_6)            2.96e-05 1.08e-05 9.96e+03 5.03e-05   0.0
+  RST_SYNC1_SCAN (mux2X1_7)            9.10e-05 3.33e-05 9.68e+03 1.34e-04   0.0
+  RST_SCAN (mux2X1_0)                  4.18e-04 3.68e-05 9.10e+03 4.64e-04   0.0
+  TX_SCAN_CLK (mux2X1_2)               1.74e-04 5.68e-06 2.11e+04 2.01e-04   0.0
+  RX_SCAN_CLK (mux2X1_3)               4.03e-03 1.73e-04 2.11e+04 4.23e-03   0.4
+  UART_SCAN_neg_CLK (mux2X1_4)         1.96e-03 1.49e-04 2.11e+04 2.13e-03   0.2
+  UART_SCAN_CLK (mux2X1_5)             4.63e-03 1.76e-04 2.11e+04 4.83e-03   0.4
+  REF_SCAN_CLK (mux2X1_1)                 0.478 6.58e-03 2.11e+04    0.485  44.7
+  SYS_CTRL_UNIT (SYS_CTRL_OP_WIDTH8_ALU_OUT_WIDTH16_REG_WIDTH8_REG_DEPTH16_ADDRESS_WIDTH4_UART_DATA_WIDTH8_test_1_test_1_test_1)
+                                       1.26e-02 1.90e-02 1.25e+06 3.28e-02   3.0
+  REG_FILE_UNIT (Register_File_DEPTH16_DATA_WIDTH8_ADDRESS_WIDTH4_test_1_test_1_test_1)
+                                       9.29e-02    0.121 6.49e+06    0.221  20.3
+  ALU_UNIT (ALU_OPERAND_WIDTH8_OUT_WIDTH16_test_1_test_1_test_1)
+                                       8.26e-03 1.51e-02 9.42e+06 3.28e-02   3.0
+    mult_55 (ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW02_mult_0)
+                                          0.000    0.000 2.06e+06 2.06e-03   0.2
+      FS_1 (ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_1)
+                                          0.000    0.000 2.16e+05 2.16e-04   0.0
+    add_49 (ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_0)
+                                          0.000    0.000 2.59e+05 2.59e-04   0.0
+    sub_52 (ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_sub_0)
+                                          0.000    0.000 2.70e+05 2.70e-04   0.0
+    div_58 (ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW_div_uns_0)
+                                          0.000    0.000 4.63e+06 4.63e-03   0.4
+  CLK_GATE_UNIT (CLK_GATE)             3.16e-02 2.42e-03 1.48e+04 3.41e-02   3.1
+  FIFO_UNIT (FIFO_TOP_DATA_WIDTH8_ADDR_SIZE3_test_1_test_1_test_1)
+                                       6.20e-02 6.74e-02 4.51e+06    0.134  12.3
+    wptr_full (FIFO_wptr_full_ADDR_SIZE3_test_1_test_1_test_1)
+                                       5.65e-03 7.22e-03 5.11e+05 1.34e-02   1.2
+    rptr_empty (FIFO_rptr_empty_ADDR_SIZE3_test_1_test_1_test_1)
+                                       5.00e-03 1.35e-03 5.47e+05 6.90e-03   0.6
+    fifomem (FIFO_MEM_DATA_WIDTH8_ADDR_SIZE3_test_1_test_1_test_1)
+                                       4.00e-02 5.13e-02 2.84e+06 9.42e-02   8.7
+    sync_w2r (sync_w2r_ADDR_SIZE3_test_1_test_1_test_1)
+                                       4.37e-03 9.73e-04 2.90e+05 5.63e-03   0.5
+    sync_r2w (sync_r2w_ADDR_SIZE3_test_1_test_1_test_1)
+                                       4.96e-03 6.40e-03 2.97e+05 1.17e-02   1.1
+  DATA_SYNC_UNIT (DATA_SYNC_NUM_STAGES2_BUS_WIDTH8_test_1_test_1_test_1)
+                                       4.45e-03 9.02e-03 3.68e+05 1.38e-02   1.3
+  RD_INC_UNIT (PULSE_GEN_test_1_test_1_test_1)
+                                       1.86e-04 9.08e-05 3.25e+04 3.09e-04   0.0
+  UART_UNIT (UART_DATA_WIDTH8_test_1_test_1_test_1)
+                                       3.94e-02 9.79e-03 3.68e+06 5.28e-02   4.9
+    UART_RX_UNIT (UART_RX_DATA_WIDTH8_test_1_test_1_test_1)
+                                       2.53e-02 6.78e-03 2.31e+06 3.44e-02   3.2
+      u_Stop_Check (Stop_Check_DATA_WIDTH8_test_1_test_1_test_1)
+                                       1.86e-04 1.41e-04 4.35e+04 3.71e-04   0.0
+      u_Parity_Check (Parity_Check_DATA_WIDTH8_test_1_test_1_test_1)
+                                       8.77e-05 1.59e-04 1.27e+05 3.74e-04   0.0
+      u_Start_Check (Start_Check_DATA_WIDTH8_test_1_test_1_test_1)
+                                       9.39e-05 1.25e-04 3.82e+04 2.57e-04   0.0
+      u_deserializer (deserializer_DATA_WIDTH8_test_1_test_1_test_1)
+                                       5.93e-03 1.63e-03 4.44e+05 8.00e-03   0.7
+      u_Data_Sampling (Data_Sampling_DATA_WIDTH8_test_1_test_1_test_1)
+                                       3.25e-03 9.77e-04 4.62e+05 4.69e-03   0.4
+      u_edge_bit_counter (edge_bit_counter_DATA_WIDTH8_test_1_test_1_test_1)
+                                       8.20e-03 2.24e-03 6.05e+05 1.10e-02   1.0
+      u_FSM_RX (FSM_RX_DATA_WIDTH8_test_1_test_1_test_1)
+                                       5.24e-03 1.32e-03 5.23e+05 7.08e-03   0.7
+    UART_TX_UNIT (UART_TX_WIDTH8_test_1_test_1_test_1)
+                                       1.29e-02 2.93e-03 1.35e+06 1.72e-02   1.6
+      u_mux (MUX)                         0.000    0.000 2.34e+04 2.34e-05   0.0
+      u_parity (Parity_Calc_WIDTH8_test_1_test_1_test_1)
+                                       4.78e-03 1.07e-03 5.31e+05 6.39e-03   0.6
+      u_serializer (Serializer_WIDTH8_test_1_test_1_test_1)
+                                       5.56e-03 1.23e-03 5.79e+05 7.37e-03   0.7
+      u_fsm (FSM_test_1_test_1_test_1) 1.66e-03 4.04e-04 1.87e+05 2.25e-03   0.2
+  TX_CLK_GEN (ClkDiv_WIDTH8_test_1_test_1_test_1)
+                                       1.68e-02 7.46e-03 2.19e+06 2.64e-02   2.4
+    add_34 (ClkDiv_WIDTH8_DW01_inc_3)  1.73e-05 5.74e-06 9.01e+04 1.13e-04   0.0
+    add_46 (ClkDiv_WIDTH8_DW01_inc_2)  1.84e-05 3.63e-06 8.87e+04 1.11e-04   0.0
+    add_57 (ClkDiv_WIDTH8_DW01_inc_1)  2.64e-05 8.41e-06 1.01e+05 1.36e-04   0.0
+    add_92 (ClkDiv_WIDTH8_DW01_inc_0)  2.94e-04 6.54e-05 1.43e+05 5.02e-04   0.0
+  RX_DIV_RATIO_GEN (Prescale_MUX_DIV_RATIO_WIDTH4)
+                                          0.000    0.000 4.55e+04 4.55e-05   0.0
+  RX_CLK_GEN (ClkDiv_WIDTH4_test_1_test_1_test_1)
+                                       8.69e-03 4.08e-03 1.01e+06 1.38e-02   1.3
+  RST_SYNC_2 (RST_SYNC_NUM_STAGES2_test_1_test_1_test_1)
+                                       3.48e-04 4.55e-04 4.48e+04 8.48e-04   0.1
+  RST_SYNC_1 (RST_SYNC_NUM_STAGES2_test_0_test_1_test_1)
+                                       7.03e-04 2.18e-03 4.69e+04 2.93e-03   0.3
+1

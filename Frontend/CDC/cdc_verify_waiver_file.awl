@@ -1,0 +1,5 @@
+waive -rule {  {Clock_converge01}  }  -comment {Created by ICer on 04-Oct-2026 04:24:39}  -exact 
+waive -rule {  {Setup_port01}  }  -comment {Created by ICer on 04-Oct-2026 04:24:44}  -exact 
+waive -rule {  {Ac_cdc01a}  }  -comment {Created by ICer on 04-Oct-2026 04:24:54}  -exact 
+waive -rule {  {Ac_conv04}  }  -comment {Created by ICer on 04-Oct-2026 04:25:01}  -exact 
+waive -rule {  {Ac_datahold01a}  }  -comment {Created by ICer on 04-Oct-2026 04:25:10}  -exact 

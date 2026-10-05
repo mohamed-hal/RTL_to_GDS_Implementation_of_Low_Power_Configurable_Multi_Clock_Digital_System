@@ -1,0 +1,2 @@
+waive -rule {  {Clock_converge01}  }  -comment {Created by ICer on 04-Oct-2026 04:21:55}  -exact 
+waive -rule {  {Setup_port01}  }  -comment {Created by ICer on 04-Oct-2026 04:22:00}  -exact 

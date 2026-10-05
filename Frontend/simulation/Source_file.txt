@@ -1,0 +1,52 @@
+# ======================================================================
+# Source_file.txt
+# Full compile-order file list for the Final_System project (not just the
+# FIFO). Used by QuestaSim as:
+#     vlog -work work -f Source_file.txt
+#
+# Verilog module order doesn't strictly matter to vlog (it elaborates
+# after all files are compiled into the library), but the files are kept
+# leaves-first / top-last here so the first compile error you see is the
+# real one, not a cascade from a missing lower-level module.
+# ======================================================================
+
+# ---- leaf modules (no sub-instances) ----
+ALU.v
+CLK_GATE.v
+ClkDiv.v
+DATA_SYNC.v
+Data_Sampling.v
+FIFO_MEM.v
+FIFO_rptr_empty.v
+FIFO_wptr_full.v
+FSM.v
+FSM_RX.v
+MUX.v
+Parity_Calc.v
+Parity_Check.v
+Prescale_MUX.v
+PULSE_GEN.v
+Register_File.v
+RST_SYNC.v
+serializer.v
+Start_Check.v
+Stop_Check.v
+deserializer.v
+edge_bit_counter.v
+sync_r2w.v
+sync_w2r.v
+SYS_CTRL.v
+
+# ---- mid-level modules (built from the leaves above) ----
+FIFO_TOP.v
+UART_RX.v
+UART_TX.v
+
+# ---- UART wrapper (UART_TX + UART_RX) ----
+UART.v
+
+# ---- top level ----
+SYS_TOP.v
+
+# ---- testbench (compiled last) ----
+tb_Final_System.v

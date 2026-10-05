@@ -1,0 +1,661 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version O-2018.06-SP1 for linux64 - Jul 19, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/ICer/.synopsys_dv_prefs.tcl
+########################### Define Top Module ############################
+set top_module SYS_TOP
+SYS_TOP
+##################### Define Working Library Directory ######################
+define_design_lib work -path ./work
+1
+############################# Formality Setup File ##########################
+set_svf $top_module.svf
+1
+################## Design Compiler Library Files #setup ######################
+puts "###########################################"
+###########################################
+puts "#      #setting Design Libraries          #"
+#      #setting Design Libraries          #
+puts "###########################################"
+###########################################
+#Add the path of the libraries to the search_path variable
+lappend search_path /home/ICer/Assignments/FINAL_SYSTEM/std_cells
+. /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver /home/ICer/Assignments/FINAL_SYSTEM/std_cells
+lappend search_path /home/ICer/Assignments/FINAL_SYSTEM/RTL
+. /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver /home/ICer/Assignments/FINAL_SYSTEM/std_cells /home/ICer/Assignments/FINAL_SYSTEM/RTL
+set SSLIB "scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db"
+scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db
+set TTLIB "scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+set FFLIB "scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db"
+scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+## Standard Cell libraries 
+set target_library [list $SSLIB $TTLIB $FFLIB]
+scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+## Standard Cell & Hard Macros libraries 
+set link_library [list * $SSLIB $TTLIB $FFLIB]  
+* scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+######################## Reading RTL Files #################################
+puts "###########################################"
+###########################################
+puts "#             Reading RTL Files           #"
+#             Reading RTL Files           #
+puts "###########################################"
+###########################################
+set file_format verilog
+verilog
+analyze -format $file_format ALU.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/ALU.v
+Presto compilation completed successfully.
+Loading db file '/home/ICer/Assignments/FINAL_SYSTEM/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db'
+Loading db file '/home/ICer/Assignments/FINAL_SYSTEM/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db'
+Loading db file '/home/ICer/Assignments/FINAL_SYSTEM/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db'
+1
+analyze -format $file_format ClkDiv.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/ClkDiv.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format CLK_GATE.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/CLK_GATE.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format Data_Sampling.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/Data_Sampling.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format DATA_SYNC.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/DATA_SYNC.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format deserializer.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/deserializer.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format edge_bit_counter.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/edge_bit_counter.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format FIFO_MEM.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/FIFO_MEM.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format FIFO_rptr_empty.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/FIFO_rptr_empty.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format FIFO_TOP.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/FIFO_TOP.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format FIFO_wptr_full.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/FIFO_wptr_full.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format SYS_TOP.v
+Running PRESTO HDLC
+Compiling source file ./SYS_TOP.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format FSM.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/FSM.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format FSM_RX.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/FSM_RX.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format MUX.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/MUX.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format Parity_Calc.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/Parity_Calc.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format Parity_Check.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/Parity_Check.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format Prescale_MUX.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/Prescale_MUX.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format PULSE_GEN.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/PULSE_GEN.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format Register_File.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/Register_File.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format RST_SYNC.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/RST_SYNC.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format serializer.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/serializer.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format Start_Check.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/Start_Check.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format Stop_Check.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/Stop_Check.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format sync_r2w.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/sync_r2w.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format sync_w2r.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/sync_w2r.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format SYS_CTRL.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/SYS_CTRL.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format UART.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/UART.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format UART_RX.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/UART_RX.v
+Presto compilation completed successfully.
+1
+analyze -format $file_format UART_TX.v
+Running PRESTO HDLC
+Compiling source file /home/ICer/Assignments/FINAL_SYSTEM/RTL/UART_TX.v
+Presto compilation completed successfully.
+1
+elaborate -lib work SYS_TOP
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/gtech.db'
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/standard.sldb'
+  Loading link library 'scmetro_tsmc_cl013g_rvt_ss_1p08v_125c'
+  Loading link library 'scmetro_tsmc_cl013g_rvt_tt_1p2v_25c'
+  Loading link library 'scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'SYS_TOP'.
+Information: Building the design 'RST_SYNC_NUM_STAGES2_0'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'RST_SYNC_NUM_STAGES2_1'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ClkDiv_WIDTH4'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'Prescale_MUX_DIV_RATIO_WIDTH4'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ClkDiv_WIDTH8'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'UART_DATA_WIDTH8'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'PULSE_GEN'. (HDL-193)
+
+Inferred memory devices in process
+	in routine PULSE_GEN line 10 in file
+		'/home/ICer/Assignments/FINAL_SYSTEM/RTL/PULSE_GEN.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   LVL_SIG_reg_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'DATA_SYNC_NUM_STAGES2_BUS_WIDTH8'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'FIFO_TOP_DATA_WIDTH8_ADDR_SIZE3'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'CLK_GATE'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'Register_File_DEPTH16_DATA_WIDTH8_ADDRESS_WIDTH4'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'SYS_CTRL_OP_WIDTH8_ALU_OUT_WIDTH16_REG_WIDTH8_REG_DEPTH16_ADDRESS_WIDTH4_UART_DATA_WIDTH8'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ClkDiv_WIDTH8_DW01_inc_0'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ClkDiv_WIDTH8_DW01_inc_1'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ClkDiv_WIDTH8_DW01_inc_2'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ClkDiv_WIDTH8_DW01_inc_3'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'UART_TX_WIDTH8'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'UART_RX_DATA_WIDTH8'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'sync_r2w_ADDR_SIZE3'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'sync_w2r_ADDR_SIZE3'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'FIFO_MEM_DATA_WIDTH8_ADDR_SIZE3'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'FIFO_rptr_empty_ADDR_SIZE3'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'FIFO_wptr_full_ADDR_SIZE3'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW_div_uns_0'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_sub_0'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_0'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW02_mult_0'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'FSM'. (HDL-193)
+
+Statistics for case statements in always block at line 39 in file
+	'/home/ICer/Assignments/FINAL_SYSTEM/RTL/FSM.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            41            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 80 in file
+	'/home/ICer/Assignments/FINAL_SYSTEM/RTL/FSM.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            85            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine FSM line 29 in file
+		'/home/ICer/Assignments/FINAL_SYSTEM/RTL/FSM.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  Current_State_reg  | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine FSM line 112 in file
+		'/home/ICer/Assignments/FINAL_SYSTEM/RTL/FSM.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      busy_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'Serializer_WIDTH8'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'Parity_Calc_WIDTH8'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'MUX'. (HDL-193)
+
+Statistics for case statements in always block at line 15 in file
+	'/home/ICer/Assignments/FINAL_SYSTEM/RTL/MUX.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            16            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'FSM_RX_DATA_WIDTH8'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'edge_bit_counter_DATA_WIDTH8'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'Data_Sampling_DATA_WIDTH8'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'deserializer_DATA_WIDTH8'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'Start_Check_DATA_WIDTH8'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'Parity_Check_DATA_WIDTH8'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'Stop_Check_DATA_WIDTH8'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_1'. (HDL-193)
+Presto compilation completed successfully.
+1
+###################### Defining toplevel ###################################
+current_design $top_module
+Current design is 'SYS_TOP'.
+{SYS_TOP}
+#################### Liniking All The Design Parts #########################
+puts "###############################################"
+###############################################
+puts "######## Liniking All The Design Parts ########"
+######## Liniking All The Design Parts ########
+puts "###############################################"
+###############################################
+#link 
+#################### Liniking All The Design Parts #########################
+puts "###############################################"
+###############################################
+puts "######## checking design consistency ##########"
+######## checking design consistency ##########
+puts "###############################################"
+###############################################
+check_design
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06-SP1
+Date:        Mon Oct  5 16:42:57 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     31
+    Unconnected ports (LINT-28)                                    31
+
+Cells                                                              22
+    Connected to power or ground (LINT-32)                         19
+    Nets connected to multiple pins on same cell (LINT-33)          3
+
+Nets                                                                1
+    Unloaded nets (LINT-2)                                          1
+--------------------------------------------------------------------------------
+
+Warning: In design 'SYS_TOP', net 'TX_CLK_GEN/SYNOPSYS_UNCONNECTED__0' driven by pin 'TX_CLK_GEN/add_91/SUM[0]' has no loads. (LINT-2)
+Warning: In design 'ClkDiv_WIDTH8_DW01_inc_0', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ClkDiv_WIDTH8_DW01_inc_0', port 'SUM[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW_div_uns_0', port 'remainder[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW_div_uns_0', port 'remainder[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW_div_uns_0', port 'remainder[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW_div_uns_0', port 'remainder[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW_div_uns_0', port 'remainder[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW_div_uns_0', port 'remainder[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW_div_uns_0', port 'remainder[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW_div_uns_0', port 'remainder[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW_div_uns_0', port 'divide_by_0' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_sub_0', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_sub_0', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_sub_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_sub_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_0', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_0', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW02_mult_0', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'Data_Sampling_DATA_WIDTH8', port 'Prescale[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_1', port 'A[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_1', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_1', port 'B[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_1', port 'B[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_1', port 'B[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_1', port 'B[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_1', port 'B[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_1', port 'B[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'SYS_TOP', a pin on submodule 'RX_CLK_GEN' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_clk_en' is connected to logic 1. 
+Warning: In design 'SYS_TOP', a pin on submodule 'TX_CLK_GEN' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_clk_en' is connected to logic 1. 
+Warning: In design 'ClkDiv_WIDTH8', a pin on submodule 'add_91' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16', a pin on submodule 'sub_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16', a pin on submodule 'sub_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16', a pin on submodule 'sub_52' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16', a pin on submodule 'add_49' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16', a pin on submodule 'add_49' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16', a pin on submodule 'add_49' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16', a pin on submodule 'mult_55' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'TC' is connected to logic 0. 
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[13]' is connected to logic 0. 
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[6]' is connected to logic 0. 
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[5]' is connected to logic 0. 
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[4]' is connected to logic 0. 
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[3]' is connected to logic 0. 
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[2]' is connected to logic 0. 
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[1]' is connected to logic 0. 
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[0]' is connected to logic 0. 
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16', the same net is connected to more than one pin on submodule 'sub_52'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'A[8]', 'B[8]'', 'CI'.
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16', the same net is connected to more than one pin on submodule 'add_49'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'A[8]', 'B[8]'', 'CI'.
+Warning: In design 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW02_mult_0', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'A[13]', 'B[6]'', 'B[5]', 'B[4]', 'B[3]', 'B[2]', 'B[1]', 'B[0]', 'CI'.
+1
+#################### Define Design Constraints #########################
+puts "###############################################"
+###############################################
+puts "############ Design Constraints #### ##########"
+############ Design Constraints #### ##########
+puts "###############################################"
+###############################################
+source ./cons.tcl
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Using operating conditions 'scmetro_tsmc_cl013g_rvt_ss_1p08v_125c' found in library 'scmetro_tsmc_cl013g_rvt_ss_1p08v_125c'.
+Using operating conditions 'scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c' found in library 'scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c'.
+###################### Mapping and optimization ########################
+puts "###############################################"
+###############################################
+puts "########## Mapping & Optimization #############"
+########## Mapping & Optimization #############
+puts "###############################################"
+###############################################
+compile 
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.1 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 54 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: Operating condition scmetro_tsmc_cl013g_rvt_ss_1p08v_125c set on design SYS_TOP has different process,
+voltage and temperatures parameters than the parameters at which target library 
+scmetro_tsmc_cl013g_rvt_tt_1p2v_25c is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'SYS_CTRL_OP_WIDTH8_ALU_OUT_WIDTH16_REG_WIDTH8_REG_DEPTH16_ADDRESS_WIDTH4_UART_DATA_WIDTH8'
+  Processing 'Register_File_DEPTH16_DATA_WIDTH8_ADDRESS_WIDTH4'
+  Processing 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_1'
+  Processing 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW02_mult_0'
+  Processing 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_add_0'
+  Processing 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW01_sub_0'
+  Processing 'ALU_OPERAND_WIDTH8_OUT_WIDTH16_DW_div_uns_0'
+  Processing 'ALU_OPERAND_WIDTH8_OUT_WIDTH16'
+  Processing 'CLK_GATE'
+  Processing 'FIFO_wptr_full_ADDR_SIZE3'
+  Processing 'FIFO_rptr_empty_ADDR_SIZE3'
+  Processing 'FIFO_MEM_DATA_WIDTH8_ADDR_SIZE3'
+  Processing 'sync_w2r_ADDR_SIZE3'
+  Processing 'sync_r2w_ADDR_SIZE3'
+  Processing 'FIFO_TOP_DATA_WIDTH8_ADDR_SIZE3'
+  Processing 'DATA_SYNC_NUM_STAGES2_BUS_WIDTH8'
+  Processing 'PULSE_GEN'
+  Processing 'Stop_Check_DATA_WIDTH8'
+  Processing 'Parity_Check_DATA_WIDTH8'
+  Processing 'Start_Check_DATA_WIDTH8'
+  Processing 'deserializer_DATA_WIDTH8'
+  Processing 'Data_Sampling_DATA_WIDTH8'
+  Processing 'edge_bit_counter_DATA_WIDTH8'
+  Processing 'FSM_RX_DATA_WIDTH8'
+  Processing 'UART_RX_DATA_WIDTH8'
+  Processing 'MUX'
+  Processing 'Parity_Calc_WIDTH8'
+  Processing 'Serializer_WIDTH8'
+  Processing 'FSM'
+  Processing 'UART_TX_WIDTH8'
+  Processing 'UART_DATA_WIDTH8'
+  Processing 'ClkDiv_WIDTH8_DW01_inc_3'
+  Processing 'ClkDiv_WIDTH8_DW01_inc_2'
+  Processing 'ClkDiv_WIDTH8_DW01_inc_1'
+  Processing 'ClkDiv_WIDTH8_DW01_inc_0'
+  Processing 'ClkDiv_WIDTH8'
+  Processing 'Prescale_MUX_DIV_RATIO_WIDTH4'
+  Processing 'ClkDiv_WIDTH4'
+  Processing 'RST_SYNC_NUM_STAGES2_1'
+  Processing 'RST_SYNC_NUM_STAGES2_0'
+  Processing 'SYS_TOP'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Loading db file '/home/ICer/Assignments/FINAL_SYSTEM/std_cells/scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db'
+Loading db file '/home/ICer/Assignments/FINAL_SYSTEM/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db'
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:10   57071.1      0.00       0.0       0.8                          
+    0:00:11   57071.1      0.00       0.0       0.8                          
+    0:00:11   57071.1      0.00       0.0       0.8                          
+    0:00:11   57071.1      0.00       0.0       0.8                          
+    0:00:11   57071.1      0.00       0.0       0.8                          
+    0:00:13   24371.8      0.00       0.0       0.0                          
+    0:00:13   24317.7      0.00       0.0       0.0                          
+    0:00:14   24317.7      0.00       0.0       0.0                          
+    0:00:14   24317.7      0.00       0.0       0.0                          
+    0:00:14   24298.9      0.00       0.0       0.0                          
+    0:00:14   24298.9      0.00       0.0       0.0                          
+    0:00:14   24298.9      0.00       0.0       0.0                          
+    0:00:14   24298.9      0.00       0.0       0.0                          
+    0:00:14   24298.9      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:14   24298.9      0.00       0.0       0.0                          
+    0:00:14   24298.9      0.00       0.0       0.0                          
+    0:00:14   24213.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:14   24213.0      0.00       0.0       0.0                          
+    0:00:14   24213.0      0.00       0.0       0.0                          
+    0:00:15   24081.2      0.00       0.0       0.0                          
+    0:00:15   24032.9      0.00       0.0       0.0                          
+    0:00:15   24020.0      0.00       0.0       0.0                          
+    0:00:15   24015.3      0.00       0.0       0.0                          
+    0:00:15   24015.3      0.00       0.0       0.0                          
+    0:00:15   24015.3      0.00       0.0       0.0                          
+    0:00:15   24015.3      0.00       0.0       0.0                          
+    0:00:15   23990.6      0.00       0.0       0.0                          
+    0:00:15   23990.6      0.00       0.0       0.0                          
+    0:00:15   23990.6      0.00       0.0       0.0                          
+    0:00:15   23990.6      0.00       0.0       0.0                          
+    0:00:15   23990.6      0.00       0.0       0.0                          
+    0:00:15   23990.6      0.00       0.0       0.0                          
+    0:00:15   23994.1      0.00       0.0       0.0                          
+Loading db file '/home/ICer/Assignments/FINAL_SYSTEM/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+#############################################################################
+# Write out files
+#############################################################################
+set_svf -off
+1
+write_file -format verilog -hierarchy -output $top_module.v
+Writing verilog file '/home/ICer/Assignments/FINAL_SYSTEM/SYN/SYS_TOP.v'.
+Warning: Verilog writer has added 1 nets to module ClkDiv_WIDTH8 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+1
+write_file -format ddc -hierarchy -output $top_module.ddc
+Writing ddc file 'SYS_TOP.ddc'.
+1
+write_sdc  -nosplit $top_module.sdc
+1
+write_sdf           $top_module.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/home/ICer/Assignments/FINAL_SYSTEM/SYN/SYS_TOP.sdf'. (WT-3)
+Information: Updating design information... (UID-85)
+1
+####################### reporting ##########################################
+report_area -hierarchy > area.rpt
+report_power -hierarchy > power.rpt
+report_timing -max_paths 100 -delay_type min > hold.rpt
+report_timing -max_paths 100 -delay_type max > setup.rpt
+report_clock -attributes > clocks.rpt
+report_constraint -all_violators > constraints.rpt
+################# starting graphical user interface #######################
+#gui_start
+#exit
+dc_shell> 
